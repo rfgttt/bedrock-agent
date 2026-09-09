@@ -118,3 +118,4 @@ Do not commit private runtime data, real `.env` files, or secrets. Use `.env.exa
 This project is licensed under the [MIT License](LICENSE).
 
 Third-party dependencies retain their respective licenses. For example, PySide6 is distributed under the LGPL-3.0 license and is not covered by this project's MIT license.
+中文说明见 [README.zh-CN.md](README.zh-CN.md)。
