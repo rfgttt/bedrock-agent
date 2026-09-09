@@ -5,7 +5,7 @@
 > 一个围绕能力系统、工具执行、MCP 集成、审批闸与可验证工作流构建的本地优先（local-first）AI Agent 运行时。
 
 ![测试](https://img.shields.io/badge/tests-67%20passed-success)
-![Python](https://img.shields.io/badge/python-3.x-blue)
+![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![许可证](https://img.shields.io/badge/license-MIT-green)
 
 ## 项目概述
@@ -65,7 +65,7 @@ copy .env.example .env          # 填入你自己的模型配置
 
 # 3. 运行测试
 pytest
-# 预期结果：67 passed
+# 预期结果：全部通过
 
 # 4. 启动桌面端
 bedrock-desktop
@@ -87,6 +87,7 @@ bedrock-desktop
 - **v0.5.0 —— QML 桌面端**：前端重构为 PySide6 + QML（任务棱镜、页面按需加载、对话增量渲染）；旧 Tkinter 前端保留为 `bedrock-desktop-legacy`。详见 [`FRONTEND.md`](FRONTEND.md)。
 - **v0.5.1 —— QML 语法守卫**：在一次 Qt 6.11 解析问题之后新增 QML 静态语法回归测试，防止同类错误再次进入补丁。
 - **v0.5.2 —— 3D 任务棱镜**：可交互 `PathView` 卡片轮播（拖拽 / 滚轮 / 方向键），最多实例化 7 张卡片，无数据变化时零持续动画。
+- **v0.5.3 —— 对话体验**：QML 前端的消息角色/布局细化，并配套 viewmodel 映射回归测试。
 - **v0.6.0 —— 当前发布态**：持久记忆与技能、工作区导入、待审批流、模型配置、性能测试。
 
 ## 文档

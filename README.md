@@ -5,7 +5,7 @@
 > A local-first AI Agent runtime built around capabilities, tool execution, MCP integration, approval gates, and verifiable workflows.
 
 ![Tests](https://img.shields.io/badge/tests-67%20passed-success)
-![Python](https://img.shields.io/badge/python-3.x-blue)
+![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Overview
@@ -65,7 +65,7 @@ copy .env.example .env          # add your model configuration
 
 # 3. Run the test suite
 pytest
-# Expected: 67 passed
+# Expected: all tests pass
 
 # 4. Launch desktop
 bedrock-desktop
@@ -87,6 +87,7 @@ Updates are reproducible, changes are verifiable, failures are rollback-able —
 - **v0.5.0 — QML desktop**: frontend rebuilt on PySide6 + QML (task prism, per-page lazy loading, incremental chat rendering); the legacy Tkinter frontend is kept as `bedrock-desktop-legacy`. See [`FRONTEND.md`](FRONTEND.md).
 - **v0.5.1 — QML syntax guard**: added a static QML syntax regression test after a Qt 6.11 parsing issue, preventing the same class of errors from entering future patches.
 - **v0.5.2 — 3D task prism**: interactive `PathView` card carousel (drag / wheel / keys), max 7 instantiated cards, no idle animation.
+- **v0.5.3 — Conversation UX**: chat message role/layout refinement in the QML frontend, with viewmodel-mapping regression tests.
 - **v0.6.0 — current released state**: memory & skills, workspace import, pending-approval flow, model config, performance tests.
 
 ## Documentation
