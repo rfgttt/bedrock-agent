@@ -20,6 +20,12 @@ Bedrock Agent is a local-first AI Agent runtime focused on reliable agent workfl
 - Local workspace management
 - Desktop (QML) components
 
+**Not a chat wrapper.** A thin ChatGPT wrapper forwards a prompt and prints the reply.
+Here every request runs through an explicit loop — intent → capability routing →
+(optional) approval gate → execution → verifiable result — with side-effecting file
+tools confined to a workspace, remote/LAN clients denied by default, and validation, logs
+and approval required for persistent changes. See [SECURITY.md](SECURITY.md).
+
 > Development principle:
 > **User-driven design and validation, AI-assisted implementation, versioned releases verified before publication.**
 
@@ -49,6 +55,22 @@ Connects Agent capabilities to external tools through standardized MCP interface
 
 ### Security Model
 When generated decisions trigger execution directly, unintended actions can happen. Bedrock Agent introduces explicit control points (approval gates) before sensitive actions, plus an app allowlist for desktop control. See [`SECURITY.md`](SECURITY.md).
+
+## Example Workflow
+
+From the CLI loop (`bedrock_agent.cli`), a sensitive request pauses for a human decision
+before anything touches the disk (schematic):
+
+```text
+you> organize the receipt files under workspace/ into monthly folders
+     → capability: file_organizer  (plans first, moves nothing; confined to workspace/)
+     → status: approval_required  (pending plan shown for review)
+you> approve
+     → plan applied; failures roll back automatically via the rollback journal
+```
+
+Low-risk capabilities (media keys, web lookup, coding review) run without a gate;
+durable-memory writes, skill installs and file changes always require explicit approval.
 
 ## Quick Start
 
