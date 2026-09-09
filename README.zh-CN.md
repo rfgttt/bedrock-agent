@@ -6,7 +6,7 @@
 
 ![测试](https://img.shields.io/badge/tests-67%20passed-success)
 ![Python](https://img.shields.io/badge/python-3.x-blue)
-![许可证](https://img.shields.io/badge/license-TBD-lightgrey)
+![许可证](https://img.shields.io/badge/license-MIT-green)
 
 ## 项目概述
 
@@ -115,4 +115,6 @@ Bedrock Agent 采用「人在环」的开发方式：AI 工具辅助实现，但
 
 ## 许可证
 
-待定（TBD）——候选：MIT（简单宽松）、Apache-2.0（含专利授权）、GPL-3.0（强 copyleft）。
+本项目采用 [MIT License](LICENSE)。
+
+第三方依赖保留其各自的许可证。例如，PySide6 以 LGPL-3.0 分发，不受本项目 MIT 许可证约束。

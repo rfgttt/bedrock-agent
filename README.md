@@ -6,7 +6,7 @@
 
 ![Tests](https://img.shields.io/badge/tests-67%20passed-success)
 ![Python](https://img.shields.io/badge/python-3.x-blue)
-![License](https://img.shields.io/badge/license-TBD-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Overview
 
@@ -115,4 +115,6 @@ Do not commit private runtime data, real `.env` files, or secrets. Use `.env.exa
 
 ## License
 
-TBD — candidates: MIT (simple and permissive), Apache-2.0 (explicit patent grant), GPL-3.0 (strong copyleft).
+This project is licensed under the [MIT License](LICENSE).
+
+Third-party dependencies retain their respective licenses. For example, PySide6 is distributed under the LGPL-3.0 license and is not covered by this project's MIT license.
