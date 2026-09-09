@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+*.db
+*.db-shm
+*.db-wal
+private/*
+!private/.gitkeep
+traces/
+workspace/*
+!workspace/.gitkeep
+skills/*
+!skills/.gitkeep
+
+*.egg-info/

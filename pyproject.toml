@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bedrock-agent"
+version = "0.6.0"
+description = "A local-only, memory-enabled, permission-aware learning agent reference implementation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "openai>=1.30,<3",
+  "python-dotenv>=1.0,<2",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "httpx>=0.27,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1"]
+mcp = ["mcp>=2.0.0rc1,<3"]
+desktop = ["PySide6>=6.7,<7"]
+
+[project.scripts]
+bedrock-agent = "bedrock_agent.cli:main"
+bedrock-server = "bedrock_agent.server:main"
+bedrock-desktop = "bedrock_agent.desktop_qml.app:main"
+bedrock-desktop-legacy = "bedrock_agent.desktop_legacy:main"
+bedrock-desktop-preview = "bedrock_agent.desktop_qml.app:preview_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.package-data]
+"bedrock_agent.desktop_qml" = ["qml/*.qml", "qml/components/*.qml", "qml/pages/*.qml", "qml/layouts/*.qml"]
