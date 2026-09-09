@@ -1,4 +1,4 @@
-# Bedrock v0.2 security boundary
+# Bedrock Security Boundary
 
 ## What is enforced
 

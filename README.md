@@ -66,11 +66,13 @@ you> organize the receipt files under workspace/ into monthly folders
      → capability: file_organizer  (plans first, moves nothing; confined to workspace/)
      → status: approval_required  (pending plan shown for review)
 you> approve
-     → plan applied; failures roll back automatically via the rollback journal
+     → plan applied; if a step fails, completed moves are reversed automatically
+       (successfully applied plans can also be undone)
 ```
 
-Low-risk capabilities (media keys, web lookup, coding review) run without a gate;
-durable-memory writes, skill installs and file changes always require explicit approval.
+Read-only tools can run without a gate. Writes and external effects—including app
+launch, media control, network access, file changes, durable-memory writes, skill
+installs, and MCP calls—require explicit approval; dangerous tools are denied by default.
 
 ## Quick Start
 
@@ -102,7 +104,7 @@ One of the main engineering focuses of this project is repeatable, verifiable ve
 - `rollback.ps1` — roll back if needed
 - `SHA256SUMS.txt` — integrity checksums
 
-Updates are reproducible, changes are verifiable, failures are rollback-able — this is the biggest differentiator of this repository compared to typical personal projects.
+Updates are reproducible, changes are verifiable, failures are rollback-able. The repository preserves this release process alongside the runtime implementation so changes can be inspected and reproduced.
 
 ### Notable milestones
 
